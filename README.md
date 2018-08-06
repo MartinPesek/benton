@@ -2,6 +2,10 @@
 
 Utility library. So far only supports faster set up of Azure Key Vault.
 
+### Installation
+
+Grab it from [NuGet](https://www.nuget.org/packages/Benton/).
+
 ### Quickly configure Azure KeyVault
 ```csharp
 private static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

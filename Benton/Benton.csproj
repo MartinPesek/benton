@@ -5,7 +5,7 @@
 
         <PackageId>Benton</PackageId>
         <Title>Benton</Title>
-        <Version>1.0.0</Version>
+        <Version>1.0.1</Version>
         <Authors>Martin Pešek</Authors>
         <PackageLicenseUrl>https://github.com/MartinPesek/benton/blob/master/LICENSE</PackageLicenseUrl>
         <Owners>MartinPesek</Owners>

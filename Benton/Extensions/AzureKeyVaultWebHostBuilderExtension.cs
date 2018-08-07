@@ -1,3 +1,4 @@
+using Benton.AzureKeyVault;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 
@@ -6,11 +7,11 @@ namespace Benton.Extensions
     public static class AzureKeyVaultWebHostBuilderExtension
     {
         /// <summary>
-        /// Adds an <see cref="T:Microsoft.Extensions.Configuration.IConfigurationProvider" /> that reads configuration
+        /// Adds an <see cref="Microsoft.Extensions.Configuration.IConfigurationProvider" /> that reads configuration
         /// values from the Azure KeyVault. Azure KeyVault is automatically configured through environmental
         /// variables or a config file.
         /// </summary>
-        /// <returns>The <see cref="T:Microsoft.AspNetCore.Hosting.IWebHostBuilder" />.</returns>
+        /// <returns>The <see cref="Microsoft.AspNetCore.Hosting.IWebHostBuilder" />.</returns>
         public static IWebHostBuilder UseAzureKeyVault(this IWebHostBuilder builder)
         {
             return builder.ConfigureAppConfiguration((context, configurationBuilder) =>
@@ -28,7 +29,8 @@ namespace Benton.Extensions
             keyVaultConfigBuilder.AddAzureKeyVault(
                 $"https://{envConfig["KEYVAULT_NAME"]}.vault.azure.net/",
                 envConfig["KEYVAULT_CLIENT_ID"],
-                envConfig["KEYVAULT_CLIENT_SECRET"]);
+                envConfig["KEYVAULT_CLIENT_SECRET"],
+                new BentonKeyVaultSecretManager());
 
             return keyVaultConfigBuilder.Build();
         }

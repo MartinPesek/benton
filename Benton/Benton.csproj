@@ -14,7 +14,6 @@
         <Description>So far only supports faster set up of Azure Key Vault.</Description>
         <PackageTags>aspnetcore azure keyvault</PackageTags>
         <Copyright>Copyright (c) 2018 Martin Pešek</Copyright>
-        <Company>Goto10</Company>
         <RepositoryUrl>https://github.com/MartinPesek/benton</RepositoryUrl>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>
